@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard CorpVL</title>
+    <style>
+        body { font-family: sans-serif; background: #1a1a1a; color: white; padding: 50px; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { border: 1px solid #444; padding: 12px; text-align: left; }
+        th { background: #333; }
+        tr:nth-child(even) { background: #222; }
+    </style>
+</head>
+<body>
+    <h2>Registros de CorpVL</h2>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Email</th>
+            <th>Password</th>
+        </tr>
+        {% for usuario in usuarios %}
+        <tr>
+            <td>{{ usuario[0] }}</td>
+            <td>{{ usuario[1] }}</td>
+            <td>{{ usuario[2] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
