@@ -1,30 +1,139 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-    <title>Dashboard CorpVL</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CorpVL | Panel Admin</title>
     <style>
-        body { font-family: sans-serif; background: #1a1a1a; color: white; padding: 50px; }
-        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
-        th, td { border: 1px solid #444; padding: 12px; text-align: left; }
-        th { background: #333; }
-        tr:nth-child(even) { background: #222; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: #0a0a0f; font-family: 'Segoe UI', sans-serif; color: #fff; min-height: 100vh; }
+        .header {
+            background: #111118;
+            border-bottom: 1px solid #1e1e2e;
+            padding: 20px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .header h1 { font-size: 20px; font-weight: 700; letter-spacing: 4px; text-transform: uppercase; }
+        .header h1 span { color: #4f8ef7; }
+        .header p { color: #555; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; margin-top: 4px; }
+        .badge {
+            background: linear-gradient(135deg, #4f8ef7, #2563eb);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        .container { padding: 40px; }
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        .stat-card {
+            background: #111118;
+            border: 1px solid #1e1e2e;
+            border-radius: 12px;
+            padding: 25px;
+        }
+        .stat-card p { color: #555; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px; }
+        .stat-card h2 { font-size: 32px; font-weight: 700; color: #4f8ef7; }
+        .table-container {
+            background: #111118;
+            border: 1px solid #1e1e2e;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        .table-header {
+            padding: 20px 25px;
+            border-bottom: 1px solid #1e1e2e;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .table-header h3 { font-size: 14px; font-weight: 600; letter-spacing: 1px; }
+        .table-header span { color: #555; font-size: 12px; }
+        table { width: 100%; border-collapse: collapse; }
+        th {
+            background: #0d0d14;
+            color: #555;
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 14px 25px;
+            text-align: left;
+            border-bottom: 1px solid #1e1e2e;
+        }
+        td { padding: 14px 25px; font-size: 14px; border-bottom: 1px solid #0d0d14; color: #ccc; }
+        tr:last-child td { border-bottom: none; }
+        tr:hover td { background: #0d0d14; }
+        .id-badge {
+            background: #1e1e2e;
+            color: #4f8ef7;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        .email-text { color: #fff; }
+        .pass-hidden {
+            background: #1e1e2e;
+            color: #555;
+            padding: 3px 12px;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 13px;
+            letter-spacing: 3px;
+        }
+        .footer { text-align: center; color: #333; font-size: 11px; padding: 30px; letter-spacing: 1px; }
     </style>
 </head>
 <body>
-    <h2>Registros de CorpVL</h2>
-    <table>
-        <tr>
-            <th>ID</th>
-            <th>Email</th>
-            <th>Password</th>
-        </tr>
-        {% for usuario in usuarios %}
-        <tr>
-            <td>{{ usuario[0] }}</td>
-            <td>{{ usuario[1] }}</td>
-            <td>{{ usuario[2] }}</td>
-        </tr>
-        {% endfor %}
-    </table>
+    <div class="header">
+        <div>
+            <h1>Corp<span>VL</span></h1>
+            <p>Panel de Administración</p>
+        </div>
+        <span class="badge">ADMIN</span>
+    </div>
+    <div class="container">
+        <div class="stats">
+            <div class="stat-card">
+                <p>Total Usuarios</p>
+                <h2>{{ usuarios|length }}</h2>
+            </div>
+            <div class="stat-card">
+                <p>Sistema</p>
+                <h2 style="font-size:18px; padding-top:8px;">En línea ✓</h2>
+            </div>
+            <div class="stat-card">
+                <p>Servidor</p>
+                <h2 style="font-size:18px; padding-top:8px;">AWS EC2</h2>
+            </div>
+        </div>
+        <div class="table-container">
+            <div class="table-header">
+                <h3>Registros del Sistema</h3>
+                <span>{{ usuarios|length }} usuarios registrados</span>
+            </div>
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <th>Email</th>
+                    <th>Contraseña</th>
+                </tr>
+                {% for usuario in usuarios %}
+                <tr>
+                    <td><span class="id-badge">#{{ usuario[0] }}</span></td>
+                    <td><span class="email-text">{{ usuario[1] }}</span></td>
+                    <td><span class="pass-hidden">••••••••</span></td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+    <p class="footer">© 2025 Corporaciones VL · Panel Administrativo</p>
 </body>
 </html>
