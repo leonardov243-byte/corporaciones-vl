@@ -4,6 +4,7 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'scripts'))
 
 from flask import Flask, render_template, request
 import sqlite3
+import bcrypt
 import log_manager as logger
 
 app = Flask(__name__)
@@ -40,11 +41,12 @@ def register():
         return "Error: Campos vacíos", 400
 
     try:
+        hashed = bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt()).decode('utf-8')
         with conectar_db() as conexion:
             cursor = conexion.cursor()
             cursor.execute(
                 "INSERT INTO usuarios (email, password) VALUES (?, ?)",
-                (email, password)
+                (email, hashed)
             )
             conexion.commit()
         logger.success(f"Nuevo usuario registrado → {email}  |  IP: {request.remote_addr}")
