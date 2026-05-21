@@ -33,6 +33,16 @@
         button:hover { opacity: 0.9; transform: translateY(-1px); }
         .divider { border: none; border-top: 1px solid #1e1e2e; margin: 25px 0; }
         .footer { text-align: center; color: #333; font-size: 11px; margin-top: 30px; letter-spacing: 1px; }
+        .strength-bar-wrapper { margin-top: 8px; }
+        .strength-bar-track { height: 4px; background: #1e1e2e; border-radius: 4px; overflow: hidden; }
+        .strength-bar-fill { height: 100%; width: 0; border-radius: 4px; transition: width 0.3s ease, background 0.3s ease; }
+        .strength-label { font-size: 11px; letter-spacing: 1px; text-transform: uppercase; margin-top: 5px; color: #555; transition: color 0.3s; }
+        .strength-weak  { background: #ef4444; }
+        .strength-medium { background: #f59e0b; }
+        .strength-strong { background: #22c55e; }
+        .label-weak   { color: #ef4444; }
+        .label-medium { color: #f59e0b; }
+        .label-strong { color: #22c55e; }
     </style>
 </head>
 <body>
@@ -51,7 +61,13 @@
                 </div>
                 <div class="form-group">
                     <label>Contraseña</label>
-                    <input type="password" name="password" placeholder="••••••••" required>
+                    <input type="password" name="password" id="password" placeholder="••••••••" required>
+                    <div class="strength-bar-wrapper">
+                        <div class="strength-bar-track">
+                            <div class="strength-bar-fill" id="strengthBar"></div>
+                        </div>
+                        <div class="strength-label" id="strengthLabel"></div>
+                    </div>
                 </div>
                 <button type="submit">Registrarse</button>
             </form>
@@ -59,5 +75,51 @@
         </div>
         <p class="footer">© 2025 Corporaciones VL · Todos los derechos reservados</p>
     </div>
+<script>
+    const passwordInput = document.getElementById('password');
+    const bar = document.getElementById('strengthBar');
+    const label = document.getElementById('strengthLabel');
+
+    passwordInput.addEventListener('input', function () {
+        const val = this.value;
+        const score = getStrength(val);
+
+        bar.className = 'strength-bar-fill';
+        label.className = 'strength-label';
+
+        if (val.length === 0) {
+            bar.style.width = '0';
+            label.textContent = '';
+            return;
+        }
+
+        if (score < 2) {
+            bar.style.width = '33%';
+            bar.classList.add('strength-weak');
+            label.classList.add('label-weak');
+            label.textContent = 'Débil';
+        } else if (score < 4) {
+            bar.style.width = '66%';
+            bar.classList.add('strength-medium');
+            label.classList.add('label-medium');
+            label.textContent = 'Media';
+        } else {
+            bar.style.width = '100%';
+            bar.classList.add('strength-strong');
+            label.classList.add('label-strong');
+            label.textContent = 'Fuerte';
+        }
+    });
+
+    function getStrength(p) {
+        let score = 0;
+        if (p.length >= 8) score++;
+        if (p.length >= 12) score++;
+        if (/[A-Z]/.test(p)) score++;
+        if (/[0-9]/.test(p)) score++;
+        if (/[^A-Za-z0-9]/.test(p)) score++;
+        return score;
+    }
+</script>
 </body>
 </html>
