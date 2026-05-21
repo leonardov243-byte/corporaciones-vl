@@ -41,7 +41,8 @@ def register():
         return "Error: Campos vacíos", 400
 
     try:
-        hashed = bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt()).decode('utf-8')
+        hashed = bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt())
+        hashed = hashed.decode('utf-8')
         with conectar_db() as conexion:
             cursor = conexion.cursor()
             cursor.execute(
