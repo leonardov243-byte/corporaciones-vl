@@ -15,9 +15,10 @@
             align-items: center;
             justify-content: space-between;
         }
-        .header h1 { font-size: 20px; font-weight: 700; letter-spacing: 4px; text-transform: uppercase; }
-        .header h1 span { color: #4f8ef7; }
-        .header p { color: #555; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; margin-top: 4px; }
+        .header-left h1 { font-size: 20px; font-weight: 700; letter-spacing: 4px; text-transform: uppercase; }
+        .header-left h1 span { color: #4f8ef7; }
+        .header-left p { color: #555; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; margin-top: 4px; }
+        .header-right { display: flex; align-items: center; gap: 14px; }
         .badge {
             background: linear-gradient(135deg, #4f8ef7, #2563eb);
             padding: 6px 16px;
@@ -25,6 +26,20 @@
             font-size: 12px;
             font-weight: 600;
         }
+        .btn-logout {
+            background: transparent;
+            border: 1px solid #2a2a3a;
+            color: #888;
+            padding: 7px 18px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: border-color 0.2s, color 0.2s;
+        }
+        .btn-logout:hover { border-color: #ef4444; color: #ef4444; }
         .container { padding: 40px; }
         .stats {
             display: grid;
@@ -52,9 +67,58 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 14px;
         }
         .table-header h3 { font-size: 14px; font-weight: 600; letter-spacing: 1px; }
         .table-header span { color: #555; font-size: 12px; }
+        .search-form { display: flex; gap: 8px; align-items: center; }
+        .search-form input {
+            background: #0a0a0f;
+            border: 1px solid #1e1e2e;
+            border-radius: 8px;
+            padding: 8px 14px;
+            color: #fff;
+            font-size: 13px;
+            outline: none;
+            width: 220px;
+            transition: border-color 0.2s;
+        }
+        .search-form input:focus { border-color: #4f8ef7; }
+        .search-form input::placeholder { color: #444; }
+        .search-form button {
+            background: linear-gradient(135deg, #4f8ef7, #2563eb);
+            border: none;
+            border-radius: 8px;
+            padding: 8px 16px;
+            color: #fff;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+        .search-form button:hover { opacity: 0.85; }
+        .search-form .btn-clear {
+            background: transparent;
+            border: 1px solid #2a2a3a;
+            border-radius: 8px;
+            padding: 8px 14px;
+            color: #666;
+            font-size: 12px;
+            text-decoration: none;
+            transition: border-color 0.2s, color 0.2s;
+        }
+        .search-form .btn-clear:hover { border-color: #555; color: #aaa; }
+        .search-banner {
+            background: rgba(79,142,247,0.07);
+            border-bottom: 1px solid rgba(79,142,247,0.15);
+            padding: 10px 25px;
+            font-size: 12px;
+            color: #4f8ef7;
+            letter-spacing: 0.5px;
+        }
         table { width: 100%; border-collapse: collapse; }
         th {
             background: #0d0d14;
@@ -87,16 +151,39 @@
             font-size: 13px;
             letter-spacing: 3px;
         }
+        .btn-delete {
+            background: transparent;
+            border: 1px solid rgba(239,68,68,0.3);
+            color: #ef4444;
+            padding: 5px 14px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+            transition: background 0.2s, border-color 0.2s;
+        }
+        .btn-delete:hover { background: rgba(239,68,68,0.12); border-color: #ef4444; }
+        .empty-state {
+            text-align: center;
+            padding: 60px 25px;
+            color: #444;
+            font-size: 14px;
+            letter-spacing: 1px;
+        }
         .footer { text-align: center; color: #333; font-size: 11px; padding: 30px; letter-spacing: 1px; }
     </style>
 </head>
 <body>
     <div class="header">
-        <div>
+        <div class="header-left">
             <h1>Corp<span>VL</span></h1>
             <p>Panel de Administración</p>
         </div>
-        <span class="badge">ADMIN</span>
+        <div class="header-right">
+            <span class="badge">ADMIN</span>
+            <a href="/admin_logout" class="btn-logout">Cerrar Sesión</a>
+        </div>
     </div>
     <div class="container">
         <div class="stats">
@@ -115,25 +202,56 @@
         </div>
         <div class="table-container">
             <div class="table-header">
-                <h3>Registros del Sistema</h3>
-                <span>{{ usuarios|length }} usuarios registrados</span>
+                <div>
+                    <h3>Registros del Sistema</h3>
+                    <span>{{ usuarios|length }} usuario{{ 's' if usuarios|length != 1 else '' }} encontrado{{ 's' if usuarios|length != 1 else '' }}</span>
+                </div>
+                <form class="search-form" action="/dashboard_vl" method="get">
+                    <input type="text" name="q" placeholder="Buscar por email..." value="{{ query }}">
+                    <button type="submit">Buscar</button>
+                    {% if query %}
+                    <a href="/dashboard_vl" class="btn-clear">Limpiar</a>
+                    {% endif %}
+                </form>
             </div>
+            {% if query %}
+            <div class="search-banner">
+                Mostrando resultados para: <strong>{{ query }}</strong>
+            </div>
+            {% endif %}
+            {% if usuarios %}
             <table>
                 <tr>
                     <th>ID</th>
                     <th>Email</th>
                     <th>Contraseña</th>
+                    <th>Acciones</th>
                 </tr>
                 {% for usuario in usuarios %}
                 <tr>
                     <td><span class="id-badge">#{{ usuario[0] }}</span></td>
                     <td><span class="email-text">{{ usuario[1] }}</span></td>
                     <td><span class="pass-hidden">••••••••</span></td>
+                    <td>
+                        <form action="/delete_user/{{ usuario[0] }}" method="post" style="display:inline;" onsubmit="return confirmDelete('{{ usuario[1] }}')">
+                            <button type="submit" class="btn-delete">Eliminar</button>
+                        </form>
+                    </td>
                 </tr>
                 {% endfor %}
             </table>
+            {% else %}
+            <div class="empty-state">
+                {% if query %}No se encontraron usuarios con ese email.{% else %}No hay usuarios registrados.{% endif %}
+            </div>
+            {% endif %}
         </div>
     </div>
     <p class="footer">© 2025 Corporaciones VL · Panel Administrativo</p>
+    <script>
+        function confirmDelete(email) {
+            return confirm('¿Eliminar al usuario ' + email + '?\nEsta acción no se puede deshacer.');
+        }
+    </script>
 </body>
 </html>
