@@ -138,6 +138,38 @@ def delete_user(user_id):
     return redirect(url_for('admin_panel'))
 
 
+
+import anthropic as ant
+from flask import jsonify
+
+@app.route('/chat', methods=['GET'])
+def chat():
+    return render_template('chat.html')
+
+@app.route('/chat_api', methods=['POST'])
+def chat_api():
+    if 'historial' not in session:
+        session['historial'] = []
+    data = request.get_json()
+    mensaje = data.get('mensaje')
+    session['historial'].append({'role': 'user', 'content': mensaje})
+    cliente = ant.Anthropic(api_key=os.environ.get('ANTHROPIC_API_KEY'))
+    msg = cliente.messages.create(
+        model='claude-sonnet-4-6',
+        max_tokens=500,
+        system='Eres Leo, un asistente virtual amigable. Respondes siempre en español.',
+        messages=session['historial']
+    )
+    respuesta = msg.content[0].text
+    session['historial'].append({'role': 'assistant', 'content': respuesta})
+    session.modified = True
+    return jsonify({'respuesta': respuesta})
+
+@app.route('/chat_limpiar', methods=['POST'])
+def chat_limpiar():
+    session.pop('historial', None)
+    return jsonify({'ok': True})
+
 if __name__ == '__main__':
     logger.iniciar_sesion()
     app.run(host='0.0.0.0', port=5000)
