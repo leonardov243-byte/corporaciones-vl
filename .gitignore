@@ -5,3 +5,4 @@ __pycache__/
 nohup.out
 registros.txt
 scripts/historial_vl.txt
+settoken.py
