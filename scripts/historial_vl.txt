@@ -59,3 +59,76 @@
 [2026-06-01 22:08:59]  INFO      │  Sistema Corporaciones VL iniciado y en línea.
 [2026-06-02 05:58:26]  SUCCESS   │  Nuevo usuario registrado → lologramosamig@gmail.com  |  IP: 127.0.0.1
 [2026-06-02 05:58:26]  ERROR     │  Fallo al registrar usuario 'lologramosamig@gmail.com': [Errno 5] Input/output error
+[2026-06-04 16:38:38]  SUCCESS   │  Login admin exitoso — IP: 127.0.0.1
+[2026-06-04 16:39:45]  SUCCESS   │  Login admin exitoso — IP: 127.0.0.1
+
+══════════════════════════════════════════════════════════
+  NUEVA SESIÓN  —  2026-06-04 16:42:13
+══════════════════════════════════════════════════════════
+[2026-06-04 16:42:13]  INFO      │  Sistema Corporaciones VL iniciado y en línea.
+[2026-06-04 16:43:09]  SUCCESS   │  Login admin exitoso — IP: 127.0.0.1
+[2026-06-04 16:43:22]  SUCCESS   │  Login admin exitoso — IP: 127.0.0.1
+
+══════════════════════════════════════════════════════════
+  NUEVA SESIÓN  —  2026-06-04 16:45:13
+══════════════════════════════════════════════════════════
+[2026-06-04 16:45:13]  INFO      │  Sistema Corporaciones VL iniciado y en línea.
+[2026-06-04 16:46:32]  SUCCESS   │  Login admin exitoso — IP: 127.0.0.1
+[2026-06-04 16:46:32]  WARNING   │  Acceso al panel /dashboard_vl — IP: 127.0.0.1
+[2026-06-04 16:46:32]  INFO      │  Panel admin cargado — 28 registro(s) consultado(s).
+[2026-06-04 16:47:11]  WARNING   │  Usuario ID 2 eliminado — IP: 127.0.0.1
+[2026-06-04 16:47:11]  WARNING   │  Acceso al panel /dashboard_vl — IP: 127.0.0.1
+[2026-06-04 16:47:11]  INFO      │  Panel admin cargado — 27 registro(s) consultado(s).
+[2026-06-04 16:47:17]  WARNING   │  Usuario ID 3 eliminado — IP: 127.0.0.1
+[2026-06-04 16:47:17]  WARNING   │  Acceso al panel /dashboard_vl — IP: 127.0.0.1
+[2026-06-04 16:47:17]  INFO      │  Panel admin cargado — 26 registro(s) consultado(s).
+[2026-06-04 16:57:40]  WARNING   │  Acceso al panel /dashboard_vl — IP: 127.0.0.1
+[2026-06-04 16:57:40]  INFO      │  Panel admin cargado — 26 registro(s) consultado(s).
+[2026-06-04 16:57:41]  WARNING   │  Acceso al panel /dashboard_vl — IP: 127.0.0.1
+[2026-06-04 16:57:41]  INFO      │  Panel admin cargado — 26 registro(s) consultado(s).
+[2026-06-04 16:57:43]  WARNING   │  Acceso al panel /dashboard_vl — IP: 127.0.0.1
+[2026-06-04 16:57:43]  INFO      │  Panel admin cargado — 26 registro(s) consultado(s).
+[2026-06-04 16:57:44]  WARNING   │  Acceso al panel /dashboard_vl — IP: 127.0.0.1
+[2026-06-04 16:57:44]  INFO      │  Panel admin cargado — 26 registro(s) consultado(s).
+[2026-06-04 16:57:44]  WARNING   │  Acceso al panel /dashboard_vl — IP: 127.0.0.1
+[2026-06-04 16:57:44]  INFO      │  Panel admin cargado — 26 registro(s) consultado(s).
+[2026-06-04 16:57:45]  WARNING   │  Acceso al panel /dashboard_vl — IP: 127.0.0.1
+[2026-06-04 16:57:45]  INFO      │  Panel admin cargado — 26 registro(s) consultado(s).
+[2026-06-04 16:57:45]  WARNING   │  Acceso al panel /dashboard_vl — IP: 127.0.0.1
+[2026-06-04 16:57:45]  INFO      │  Panel admin cargado — 26 registro(s) consultado(s).
+[2026-06-04 16:57:45]  WARNING   │  Acceso al panel /dashboard_vl — IP: 127.0.0.1
+[2026-06-04 16:57:45]  INFO      │  Panel admin cargado — 26 registro(s) consultado(s).
+[2026-06-04 16:57:45]  WARNING   │  Acceso al panel /dashboard_vl — IP: 127.0.0.1
+[2026-06-04 16:57:45]  INFO      │  Panel admin cargado — 26 registro(s) consultado(s).
+[2026-06-04 16:57:45]  WARNING   │  Acceso al panel /dashboard_vl — IP: 127.0.0.1
+[2026-06-04 16:57:45]  INFO      │  Panel admin cargado — 26 registro(s) consultado(s).
+[2026-06-04 16:57:46]  WARNING   │  Acceso al panel /dashboard_vl — IP: 127.0.0.1
+[2026-06-04 16:57:46]  INFO      │  Panel admin cargado — 26 registro(s) consultado(s).
+[2026-06-04 16:57:47]  WARNING   │  Acceso al panel /dashboard_vl — IP: 127.0.0.1
+[2026-06-04 16:57:47]  INFO      │  Panel admin cargado — 26 registro(s) consultado(s).
+[2026-06-04 16:58:26]  WARNING   │  Acceso al panel /dashboard_vl — IP: 127.0.0.1
+[2026-06-04 16:58:26]  INFO      │  Panel admin cargado — 26 registro(s) consultado(s).
+[2026-06-04 16:59:15]  WARNING   │  Acceso al panel /dashboard_vl — IP: 127.0.0.1
+[2026-06-04 16:59:15]  INFO      │  Panel admin cargado — 26 registro(s) consultado(s).
+[2026-06-04 16:59:17]  WARNING   │  Acceso al panel /dashboard_vl — IP: 127.0.0.1
+[2026-06-04 16:59:17]  INFO      │  Panel admin cargado — 26 registro(s) consultado(s).
+[2026-06-04 16:59:18]  WARNING   │  Acceso al panel /dashboard_vl — IP: 127.0.0.1
+[2026-06-04 16:59:18]  INFO      │  Panel admin cargado — 26 registro(s) consultado(s).
+[2026-06-04 16:59:19]  WARNING   │  Acceso al panel /dashboard_vl — IP: 127.0.0.1
+[2026-06-04 16:59:19]  INFO      │  Panel admin cargado — 26 registro(s) consultado(s).
+[2026-06-04 16:59:20]  WARNING   │  Acceso al panel /dashboard_vl — IP: 127.0.0.1
+[2026-06-04 16:59:20]  INFO      │  Panel admin cargado — 26 registro(s) consultado(s).
+
+══════════════════════════════════════════════════════════
+  NUEVA SESIÓN  —  2026-06-04 16:59:45
+══════════════════════════════════════════════════════════
+[2026-06-04 16:59:45]  INFO      │  Sistema Corporaciones VL iniciado y en línea.
+[2026-06-04 16:59:48]  WARNING   │  Acceso al panel /dashboard_vl — IP: 127.0.0.1
+[2026-06-04 16:59:48]  INFO      │  Panel admin cargado — 26 registro(s) consultado(s).
+
+══════════════════════════════════════════════════════════
+  NUEVA SESIÓN  —  2026-06-04 17:00:33
+══════════════════════════════════════════════════════════
+[2026-06-04 17:00:33]  INFO      │  Sistema Corporaciones VL iniciado y en línea.
+[2026-06-04 17:00:35]  WARNING   │  Acceso al panel /dashboard_vl — IP: 127.0.0.1
+[2026-06-04 17:00:35]  INFO      │  Panel admin cargado — 26 registro(s) consultado(s).
