@@ -1,4 +1,4 @@
-# 🏢 CorpVL — Sistema de Gestión Empresarial en la Nube
+CorpVL — Sistema de Gestión Empresarial en la Nube
 
 Sistema de gestión empresarial desplegado en producción sobre **AWS EC2**, con autenticación segura, panel administrativo y asistente virtual con IA integrada.
 
