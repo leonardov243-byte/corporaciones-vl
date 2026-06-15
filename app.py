@@ -170,6 +170,22 @@ def chat_limpiar():
     session.pop('historial', None)
     return jsonify({'ok': True})
 
+
+import threading, urllib.request, json as _json
+
+def _track(ip, ruta, ua=""):
+    try:
+        data = _json.dumps({'proyecto': 'corpvl', 'ip': ip, 'ruta': ruta, 'ua': ua}).encode()
+        req = urllib.request.Request('http://3.91.15.132:5000/api/track', data=data, headers={'Content-Type': 'application/json', 'X-Real-UA': ua}, method='POST')
+        urllib.request.urlopen(req, timeout=2)
+    except:
+        pass
+
+@app.before_request
+def track_visit():
+    ip = request.headers.get('X-Real-IP', request.remote_addr)
+    ua = request.headers.get("User-Agent", "")
+    threading.Thread(target=_track, args=(ip, request.path, ua), daemon=True).start()
 if __name__ == '__main__':
     logger.iniciar_sesion()
     app.run(host='0.0.0.0', port=5000)
