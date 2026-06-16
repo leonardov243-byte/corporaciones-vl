@@ -1,33 +1,45 @@
-CorpVL — Sistema de Gestión Empresarial en la Nube
+# 🏢 CorpVL — Sistema de Autenticación Empresarial en la Nube
 
-Sistema de gestión empresarial desplegado en producción sobre **AWS EC2**, con autenticación segura, panel administrativo y asistente virtual con IA integrada.
+Sistema de login empresarial desplegado en producción sobre AWS EC2, con autenticación segura y asistente virtual con IA integrada. Funciona como punto de entrada al ecosistema VL, enviando datos de cada sesión a VL Analytics para análisis de tráfico en tiempo real.
 
-## [corpvl.com](https://corpvl.com)**
+**Demo en vivo:** http://54.85.49.76
 
 ---
 
-##  Stack Tecnológico
+## Stack Tecnológico
 
-- **Backend:** Python 3 + Flask
-- **Base de datos:** SQLite con bcrypt para hashing de contraseñas
-- **Servidor web:** Nginx como reverse proxy
-- **SSL/HTTPS:** Certbot + Let's Encrypt
-- **Infraestructura:** AWS EC2
-- **IA integrada:** Anthropic Claude API (asistente virtual Leo)
+| Capa | Tecnología |
+|------|-----------|
+| Backend | Python 3 + Flask |
+| Base de datos | SQLite + bcrypt |
+| Servidor web | Nginx (reverse proxy) |
+| Proceso | Gunicorn (2 workers) |
+| Sistema | systemd (arranque automático) |
+| Infraestructura | AWS EC2 t2.micro (Free Tier) |
+| IA integrada | Anthropic Claude API |
 
 ---
 
 ## Funcionalidades
 
-- 🔐 Registro de usuarios con contraseñas encriptadas
-- 🛡️ Panel administrativo protegido con autenticación
-- 👥 Gestión de usuarios (consulta, búsqueda y eliminación)
-- 🤖 Asistente virtual **Leo** con IA conversacional en español
-- 📋 Sistema de logs con registro de actividad y IPs
-- 🌐 Dominio propio con HTTPS activo en producción
+- 🔐 Login seguro con contraseñas encriptadas (bcrypt)
+- 🤖 Asistente virtual **Leo** con IA conversacional en español (Claude API)
+- 📡 Tracking automático de visitas hacia VL Analytics
+- ⚙️ Servicio systemd — se recupera solo ante cualquier fallo
+- 🔄 Gunicorn como servidor WSGI de producción
+
+---
+
+## Arquitectura
+
+---
+
+## Proyectos externos conectados
+
+- [VL Analytics](https://github.com/leonardov243-byte/vl-analytics) — Panel de analíticas que recibe y procesa los datos de cada sesión iniciada en CorpVL
 
 ---
 
 ## Autor
 
-**Leonardo V.** — Desarrollado y desplegado íntegramente en AWS EC2.
+**Leonardo Vieira** — Desarrollado y desplegado integramente en AWS EC2.
