@@ -1,8 +1,5 @@
-*.db
-usuarios_vl.db
 __pycache__/
-*.py[cod]
-nohup.out
-registros.txt
-scripts/historial_vl.txt
-settoken.py
+*.pyc
+*.pyo
+.env
+*.db
