@@ -187,3 +187,36 @@
 ══════════════════════════════════════════════════════════
 [2026-06-15 06:28:50]  INFO      │  Sistema Corporaciones VL iniciado y en línea.
 [2026-06-16 21:06:58]  SUCCESS   │  Nuevo usuario registrado → lalamelala@gmail.com  |  IP: 127.0.0.1
+[2026-06-17 00:37:49]  SUCCESS   │  Nuevo usuario registrado → enterprices@gmail.com  |  IP: 127.0.0.1
+[2026-06-17 00:39:11]  SUCCESS   │  Nuevo usuario registrado → kjblvljbhldv@gmail.com  |  IP: 127.0.0.1
+[2026-06-17 11:46:14]  SUCCESS   │  Login admin exitoso — IP: 127.0.0.1
+[2026-06-17 11:46:14]  WARNING   │  Acceso al panel /dashboard_vl — IP: 127.0.0.1
+[2026-06-17 11:46:14]  INFO      │  Panel admin cargado — 45 registro(s) consultado(s).
+[2026-06-17 11:48:12]  SUCCESS   │  Nuevo usuario registrado → bdvivgbd@gmail.com  |  IP: 127.0.0.1
+[2026-06-17 11:48:19]  WARNING   │  Acceso al panel /dashboard_vl — IP: 127.0.0.1
+[2026-06-17 11:48:19]  INFO      │  Panel admin cargado — 46 registro(s) consultado(s).
+[2026-06-17 11:48:21]  WARNING   │  Acceso al panel /dashboard_vl — IP: 127.0.0.1
+[2026-06-17 11:48:21]  INFO      │  Panel admin cargado — 46 registro(s) consultado(s).
+[2026-06-17 22:52:45]  WARNING   │  Acceso al panel /dashboard_vl — IP: 127.0.0.1
+[2026-06-17 22:52:45]  INFO      │  Panel admin cargado — 46 registro(s) consultado(s).
+[2026-06-17 22:52:47]  WARNING   │  Acceso al panel /dashboard_vl — IP: 127.0.0.1
+[2026-06-17 22:52:47]  INFO      │  Panel admin cargado — 46 registro(s) consultado(s).
+[2026-06-17 22:52:48]  WARNING   │  Acceso al panel /dashboard_vl — IP: 127.0.0.1
+[2026-06-17 22:52:48]  INFO      │  Panel admin cargado — 46 registro(s) consultado(s).
+[2026-06-17 22:54:32]  SUCCESS   │  Nuevo usuario registrado → laeknkb@gmail.com  |  IP: 127.0.0.1
+[2026-06-17 22:54:42]  WARNING   │  Acceso al panel /dashboard_vl — IP: 127.0.0.1
+[2026-06-17 22:54:42]  INFO      │  Panel admin cargado — 47 registro(s) consultado(s).
+[2026-06-17 22:55:20]  WARNING   │  Acceso al panel /dashboard_vl — IP: 127.0.0.1
+[2026-06-17 22:55:20]  INFO      │  Panel admin cargado — 47 registro(s) consultado(s).
+[2026-06-17 22:56:56]  SUCCESS   │  Nuevo usuario registrado → lamadrequeteparioen2020@gmail.com  |  IP: 127.0.0.1
+[2026-06-17 22:57:08]  WARNING   │  Acceso al panel /dashboard_vl — IP: 127.0.0.1
+[2026-06-17 22:57:08]  INFO      │  Panel admin cargado — 48 registro(s) consultado(s).
+[2026-06-17 23:05:25]  SUCCESS   │  Nuevo usuario registrado → admin123@gmail.com  |  IP: 127.0.0.1
+[2026-06-17 23:22:31]  SUCCESS   │  Nuevo usuario registrado → admin_123@gmail.com  |  IP: 127.0.0.1
+[2026-06-17 23:31:51]  SUCCESS   │  Nuevo usuario registrado → admin123_@gmal.com  |  IP: 127.0.0.1
+[2026-06-17 23:37:04]  SUCCESS   │  Nuevo usuario registrado → admiun1234_@gmaiil.com  |  IP: 127.0.0.1
+[2026-06-18 00:08:27]  WARNING   │  Acceso al panel /dashboard_vl — IP: 127.0.0.1
+[2026-06-18 00:08:27]  INFO      │  Panel admin cargado — 2 registro(s) consultado(s).
+[2026-06-18 00:08:43]  WARNING   │  Acceso al panel /dashboard_vl — IP: 127.0.0.1
+[2026-06-18 00:08:43]  INFO      │  Panel admin cargado — 52 registro(s) consultado(s).
+[2026-06-18 01:08:28]  INFO      │  Logout admin — IP: 127.0.0.1

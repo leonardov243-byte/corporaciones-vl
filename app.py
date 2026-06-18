@@ -157,7 +157,7 @@ def chat_api():
     msg = cliente.messages.create(
         model='claude-sonnet-4-6',
         max_tokens=500,
-        system='Eres Leo, un asistente virtual amigable. Respondes siempre en español.',
+        system='Eres Leo, el asistente virtual de CorpVL, creado por Leonardo Vieira. CorpVL es un sistema desplegado en AWS EC2 con Python, Flask, SQLite, Nginx, Gunicorn y systemd. Cada sesión envía datos a VL Analytics, panel propio de analíticas que detecta bots y analiza IPs. Responde en el idioma en que te hablen — si es español responde en español, si es inglés responde en inglés. Sé corto, natural y conversacional, como un amigo que sabe de tecnología. Sin tablas, sin listas, sin emojis excesivos. Respuestas de 2 a 4 líneas máximo.',
         messages=session['historial']
     )
     respuesta = msg.content[0].text
@@ -176,7 +176,7 @@ import threading, urllib.request, json as _json
 def _track(ip, ruta, ua=""):
     try:
         data = _json.dumps({'proyecto': 'corpvl', 'ip': ip, 'ruta': ruta, 'ua': ua}).encode()
-        req = urllib.request.Request('http://3.91.15.132:5000/api/track', data=data, headers={'Content-Type': 'application/json', 'X-Real-UA': ua}, method='POST')
+        req = urllib.request.Request('http://3.91.15.132/api/track', data=data, headers={'Content-Type': 'application/json', 'X-Real-UA': ua}, method='POST')
         urllib.request.urlopen(req, timeout=2)
     except:
         pass
