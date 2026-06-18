@@ -26,11 +26,13 @@ Sistema de login empresarial desplegado en producción sobre AWS EC2, con autent
 
 ## Funcionalidades
 
-- 🔐 Login seguro con contraseñas encriptadas (bcrypt)
-- 🤖 Asistente virtual **Leo** con IA conversacional en español (Claude API)
-- 📡 Tracking automático de visitas hacia VL Analytics
-- ⚙️ Servicio systemd — se recupera solo ante cualquier fallo
-- 🔄 Gunicorn como servidor WSGI de producción
+-  Login seguro con contraseñas encriptadas (bcrypt)
+-  Asistente virtual **Leo** con IA conversacional en español (Claude API)
+-  Tracking automático de visitas hacia VL Analytics
+-  Panel de administración protegido con autenticación
+-  Gestión de usuarios — búsqueda por email y eliminación de cuentas
+-  Servicio systemd — se recupera solo ante cualquier fallo
+-  Gunicorn como servidor WSGI de producción
 
 ---
 
