@@ -1,3 +1,7 @@
+
+
+https://github.com/user-attachments/assets/a4406b3d-ac66-41ab-a749-b24701df9efd
+
 # 🏢 CorpVL — Sistema de Autenticación Empresarial en la Nube
 
 Sistema de login empresarial desplegado en producción sobre AWS EC2, con autenticación segura y asistente virtual con IA integrada. Funciona como punto de entrada al ecosistema VL, enviando datos de cada sesión a VL Analytics para análisis de tráfico en tiempo real.
